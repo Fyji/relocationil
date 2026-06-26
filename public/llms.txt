@@ -1,0 +1,42 @@
+# Relocation IL
+
+> Relocation IL מספקת ייעוץ מקצועי לישראלים המעוניינים להגר לניו זילנד ואוסטרליה דרך מסלול לימודים אקדמיים. תואר שני → ויזת עבודה → תושבות קבועה → אזרחות.
+
+Relocation IL is a professional immigration consulting service for Israelis seeking to relocate to New Zealand and Australia through academic study pathways. The proven route: Master's degree → Post-study work visa → Permanent residency → Citizenship.
+
+## Main Pages
+
+- [Homepage](https://relocationil.com/): Landing page with overview of the study-to-citizenship pathway for NZ and Australia
+- [New Zealand](https://relocationil.com/new-zealand): Complete guide to immigration to New Zealand through studies — top universities, Green List occupations, work visas, and pathway to residency
+- [Australia](https://relocationil.com/australia): Complete guide to immigration to Australia through studies — top universities, skills assessment, points system, and pathway to PR
+- [Compare NZ vs AU](https://relocationil.com/compare): Side-by-side comparison of New Zealand and Australia — tuition costs, salaries, visa timelines, quality of life, climate, and residency paths
+- [Process](https://relocationil.com/process): Step-by-step guide to the relocation process — from initial consultation to citizenship, with timelines
+- [FAQ](https://relocationil.com/faq): 23 frequently asked questions covering costs, visas, family, employment, timeline, and more
+- [Contact](https://relocationil.com/contact): Contact form, phone, email, and WhatsApp for free consultation
+
+## Key Information
+
+### Target Audience
+Israeli families and professionals seeking a proven immigration pathway through higher education in New Zealand or Australia.
+
+### Services
+- Immigration pathway consulting (NZ & AU)
+- University selection and application guidance
+- Visa and work permit guidance
+- Settlement and family relocation support
+- Free 15-minute initial consultation
+
+### Key Facts
+- New Zealand: Visa processing in 4-8 weeks, Green List fast-track to PR for in-demand occupations
+- Australia: Average salary AUD 95K+, strong demand for skilled migrants
+- Both countries: Spouse can work from day 1, children study for free in public schools
+- Canada comparison: 18+ months visa wait vs. NZ/AU faster processing
+
+### Contact
+- Website: https://relocationil.com
+- WhatsApp: Available on website
+- Free consultation: 15-minute call
+
+## Optional
+
+- [Full Content](https://relocationil.com/llms-full.txt): Complete site content in plain text for LLM consumption
