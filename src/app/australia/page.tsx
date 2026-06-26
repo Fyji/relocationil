@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FlagIcon from "@/components/FlagIcon";
 import {
   GraduationCap,
   Briefcase,
@@ -45,7 +46,7 @@ export default function AustraliaPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-yellow-900/70 via-yellow-800/60 to-yellow-700/50" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white py-20">
-          <div className="text-6xl mb-6">🇦🇺</div>
+          <div className="text-6xl mb-6"><FlagIcon code="au" size="3.5rem" /></div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
             לימודים באוסטרליה
             <br />
@@ -763,7 +764,7 @@ export default function AustraliaPage() {
       <section className="py-20 lg:py-28 bg-gradient-to-l from-yellow-800 to-au">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <div className="text-6xl mb-6">🇦🇺</div>
+            <div className="text-6xl mb-6"><FlagIcon code="au" size="3.5rem" /></div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               מוכנים להתחיל את המסלול לאוסטרליה?
             </h2>

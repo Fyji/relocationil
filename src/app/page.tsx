@@ -20,6 +20,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import FlagIcon from "@/components/FlagIcon";
 import CountUp from "@/components/CountUp";
 import ContactForm from "@/components/ContactForm";
 
@@ -109,9 +110,9 @@ export default function HomePage() {
           <AnimatedSection delay={200}>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
               {[
-                { emoji: "🇨🇦", text: "קנדה: 18+ חודשי המתנה לויזה", sub: "מכסות מלאות, חוסר ודאות" },
-                { emoji: "🇳🇿", text: "ניו זילנד: 4-8 שבועות לויזה", sub: "Green List — PR מהיר למקצועות מבוקשים" },
-                { emoji: "🇦🇺", text: "אוסטרליה: ביקוש למהגרים מיומנים", sub: "שכר ממוצע AUD 95K+" },
+                { emoji: <FlagIcon code="ca" size="2rem" />, text: "קנדה: 18+ חודשי המתנה לויזה", sub: "מכסות מלאות, חוסר ודאות" },
+                { emoji: <FlagIcon code="nz" size="2rem" />, text: "ניו זילנד: 4-8 שבועות לויזה", sub: "Green List — PR מהיר למקצועות מבוקשים" },
+                { emoji: <FlagIcon code="au" size="2rem" />, text: "אוסטרליה: ביקוש למהגרים מיומנים", sub: "שכר ממוצע AUD 95K+" },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -396,7 +397,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 </div>
                 <div className="p-8 pt-4">
-                  <div className="text-4xl mb-4">🇳🇿</div>
+                  <div className="text-4xl mb-4"><FlagIcon code="nz" size="2.5rem" /></div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     ניו זילנד
                   </h3>
@@ -440,7 +441,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 </div>
                 <div className="p-8 pt-4">
-                  <div className="text-4xl mb-4">🇦🇺</div>
+                  <div className="text-4xl mb-4"><FlagIcon code="au" size="2.5rem" /></div>
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     אוסטרליה
                   </h3>
@@ -480,7 +481,7 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5">
-                  <span className="text-white font-bold text-lg">🇳🇿 החיים בניו זילנד</span>
+                  <span className="text-white font-bold text-lg flex items-center gap-2"><FlagIcon code="nz" size="1.4rem" /> החיים בניו זילנד</span>
                 </div>
               </div>
               <div className="relative h-56 rounded-xl overflow-hidden shadow-md">
@@ -492,7 +493,7 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5">
-                  <span className="text-white font-bold text-lg">🇦🇺 החיים באוסטרליה</span>
+                  <span className="text-white font-bold text-lg flex items-center gap-2"><FlagIcon code="au" size="1.4rem" /> החיים באוסטרליה</span>
                 </div>
               </div>
             </div>

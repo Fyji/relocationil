@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FlagIcon from "@/components/FlagIcon";
 import {
   Globe2,
   DollarSign,
@@ -153,7 +154,7 @@ export default function ComparePage() {
               <div className="absolute bottom-4 right-4 text-white">
                 <span className="text-2xl font-bold flex items-center gap-2">
                   <span className="w-4 h-4 rounded-full bg-nz inline-block" />
-                  ניו זילנד 🇳🇿
+                  ניו זילנד <FlagIcon code="nz" size="1.2rem" />
                 </span>
               </div>
             </div>
@@ -169,7 +170,7 @@ export default function ComparePage() {
               <div className="absolute bottom-4 right-4 text-white">
                 <span className="text-2xl font-bold flex items-center gap-2">
                   <span className="w-4 h-4 rounded-full bg-au inline-block" />
-                  אוסטרליה 🇦🇺
+                  אוסטרליה <FlagIcon code="au" size="1.2rem" />
                 </span>
               </div>
             </div>
@@ -190,8 +191,8 @@ export default function ComparePage() {
           <AnimatedSection>
             <div className="hidden md:grid grid-cols-3 gap-4 px-6 py-3">
               <div className="font-bold text-foreground text-lg">קטגוריה</div>
-              <div className="font-bold text-nz text-lg text-center">🇳🇿 ניו זילנד</div>
-              <div className="font-bold text-au text-lg text-center">🇦🇺 אוסטרליה</div>
+              <div className="font-bold text-nz text-lg text-center"><FlagIcon code="nz" size="1.2rem" /> ניו זילנד</div>
+              <div className="font-bold text-au text-lg text-center"><FlagIcon code="au" size="1.2rem" /> אוסטרליה</div>
             </div>
           </AnimatedSection>
 
@@ -205,11 +206,11 @@ export default function ComparePage() {
                   <span className="font-semibold text-foreground">{item.category}</span>
                 </div>
                 <div className="md:text-center mb-2 md:mb-0">
-                  <span className="md:hidden font-medium text-nz">🇳🇿 </span>
+                  <span className="md:hidden font-medium text-nz"><FlagIcon code="nz" size="1rem" /> </span>
                   <span className="text-muted">{item.nz}</span>
                 </div>
                 <div className="md:text-center">
-                  <span className="md:hidden font-medium text-au">🇦🇺 </span>
+                  <span className="md:hidden font-medium text-au"><FlagIcon code="au" size="1rem" /> </span>
                   <span className="text-muted">{item.au}</span>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FlagIcon from "@/components/FlagIcon";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function ContactForm() {
@@ -95,8 +96,8 @@ export default function ContactForm() {
         </label>
         <div className="grid grid-cols-2 gap-3">
           {[
-            { value: "nz", label: "🇳🇿 ניו זילנד" },
-            { value: "au", label: "🇦🇺 אוסטרליה" },
+            { value: "nz", label: "ניו זילנד", flag: "nz" },
+            { value: "au", label: "אוסטרליה", flag: "au" },
             { value: "both", label: "שתיהן" },
             { value: "unsure", label: "לא בטוח/ה" },
           ].map((option) => (
@@ -111,6 +112,7 @@ export default function ContactForm() {
                 required
                 className="sr-only"
               />
+              {option.flag && <FlagIcon code={option.flag} size="1.2rem" />}
               {option.label}
             </label>
           ))}

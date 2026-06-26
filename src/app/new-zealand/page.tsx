@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FlagIcon from "@/components/FlagIcon";
 import {
   GraduationCap,
   Briefcase,
@@ -43,7 +44,7 @@ export default function NewZealandPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d5c2e]/70 via-nz/50 to-nz/40" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white py-20">
-          <div className="text-5xl mb-6">🇳🇿</div>
+          <div className="text-5xl mb-6"><FlagIcon code="nz" size="3rem" /></div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
             ניו זילנד
             <br />
@@ -710,7 +711,7 @@ export default function NewZealandPage() {
       <section className="py-20 lg:py-28 bg-gradient-to-l from-[#0d5c2e] to-nz">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <div className="text-5xl mb-6">🇳🇿</div>
+            <div className="text-5xl mb-6"><FlagIcon code="nz" size="3rem" /></div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               מוכנים להתחיל את המסלול לניו זילנד?
             </h2>
