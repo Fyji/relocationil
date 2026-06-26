@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, Globe, Phone } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
   { href: "/new-zealand", label: "ניו זילנד" },
@@ -21,11 +22,15 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <Globe className="w-8 h-8 text-primary group-hover:text-secondary transition-colors" />
-            <span className="text-xl font-bold text-primary">
-              Relocation <span className="text-secondary">IL</span>
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/logo.png"
+              alt="Relocation IL"
+              width={180}
+              height={50}
+              className="h-10 lg:h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

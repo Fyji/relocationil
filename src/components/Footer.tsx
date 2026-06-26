@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Globe, Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -8,11 +9,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <Globe className="w-7 h-7 text-secondary" />
-              <span className="text-lg font-bold text-white">
-                Relocation <span className="text-secondary">IL</span>
-              </span>
+            <Link href="/" className="flex items-center mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="Relocation IL"
+                width={160}
+                height={44}
+                className="h-10 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-sm leading-relaxed">
               ליווי מקצועי לישראלים במסלול לימודים והגירה לניו זילנד ואוסטרליה.
