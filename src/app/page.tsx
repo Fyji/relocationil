@@ -40,7 +40,7 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white py-20">
           <p className="text-accent font-semibold text-sm sm:text-base mb-4 tracking-wide">
-            המסלול שישראלים לא מספרים עליו
+            המסלול המהיר לאזרחות באוסטרליה וניו זילנד
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
             תואר שני שנגמר
@@ -48,7 +48,7 @@ export default function HomePage() {
             <span className="text-accent">בדרכון חדש</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-white/85 mb-4 max-w-3xl mx-auto leading-relaxed">
-            18 חודשי לימודים → 3 שנות עבודה → תושבות קבועה → אזרחות.
+            תואר שני באוניברסיטה מובילה, ויזת עבודה מובטחת, ומסלול ישיר לתושבות קבועה — לכל המשפחה.
           </p>
           <p className="text-base sm:text-lg text-white/65 mb-8 max-w-2xl mx-auto">
             לא רק אתה — גם בן/בת הזוג עובד/ת, הילדים לומדים חינם, וכל המשפחה על המסלול.
