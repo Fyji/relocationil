@@ -164,6 +164,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== VISUAL BREAK — STUDENTS ===== */}
+      <section className="relative h-64 md:h-80 overflow-hidden">
+        <Image
+          src="/images/students.png"
+          alt="סטודנטים ישראלים בקמפוס"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-primary-dark/50 flex items-center justify-center">
+          <AnimatedSection>
+            <p className="text-white text-2xl md:text-3xl font-bold text-center px-4">
+              הצטרפו לאלפי ישראלים שכבר עשו את הצעד
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* ===== WHY NZ & AU ===== */}
       <section className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -175,6 +193,48 @@ export default function HomePage() {
               <p className="text-lg text-muted max-w-2xl mx-auto">
                 היתרונות שהופכים את המסלול הזה לבחירה הטובה ביותר
               </p>
+            </div>
+          </AnimatedSection>
+
+          {/* Feature image row */}
+          <AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+              <div className="relative h-48 rounded-xl overflow-hidden">
+                <Image
+                  src="/images/graduation.png"
+                  alt="טקס סיום לימודים"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                  <span className="text-white font-bold text-sm">🎓 אקדמיה ברמה עולמית</span>
+                </div>
+              </div>
+              <div className="relative h-48 rounded-xl overflow-hidden">
+                <Image
+                  src="/images/office-nz.png"
+                  alt="סביבת עבודה בניו זילנד"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                  <span className="text-white font-bold text-sm">💼 שוק עבודה חזק</span>
+                </div>
+              </div>
+              <div className="relative h-48 rounded-xl overflow-hidden">
+                <Image
+                  src="/images/family-home.png"
+                  alt="משפחה בבית חדש"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                  <span className="text-white font-bold text-sm">🏡 כל המשפחה כלולה</span>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
 
@@ -273,8 +333,19 @@ export default function HomePage() {
             <AnimatedSection delay={0}>
               <a
                 href="/new-zealand"
-                className="block bg-white rounded-2xl border-t-4 border-nz p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer"
+                className="block bg-white rounded-2xl border-t-4 border-nz shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer overflow-hidden"
               >
+                <div className="relative h-48 w-full">
+                  <Image
+                    src="/images/nz-hero.png"
+                    alt="נופי ניו זילנד"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+                </div>
+                <div className="p-8 pt-4">
                 <div className="text-4xl mb-4">🇳🇿</div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">
                   ניו זילנד
@@ -297,6 +368,7 @@ export default function HomePage() {
                   למד עוד
                   <ArrowLeft className="w-4 h-4" />
                 </span>
+                </div>
               </a>
             </AnimatedSection>
 
@@ -304,8 +376,19 @@ export default function HomePage() {
             <AnimatedSection delay={150}>
               <a
                 href="/australia"
-                className="block bg-white rounded-2xl border-t-4 border-au p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer"
+                className="block bg-white rounded-2xl border-t-4 border-au shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full cursor-pointer overflow-hidden"
               >
+                <div className="relative h-48 w-full">
+                  <Image
+                    src="/images/au-hero.png"
+                    alt="נופי אוסטרליה"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+                </div>
+                <div className="p-8 pt-4">
                 <div className="text-4xl mb-4">🇦🇺</div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">
                   אוסטרליה
@@ -328,11 +411,42 @@ export default function HomePage() {
                   למד עוד
                   <ArrowLeft className="w-4 h-4" />
                 </span>
+                </div>
               </a>
             </AnimatedSection>
           </div>
 
+          {/* Compare images */}
           <AnimatedSection delay={300}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
+              <div className="relative h-56 rounded-xl overflow-hidden shadow-md">
+                <Image
+                  src="/images/compare-nz.png"
+                  alt="חיים בניו זילנד"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5">
+                  <span className="text-white font-bold text-lg">🇳🇿 החיים בניו זילנד</span>
+                </div>
+              </div>
+              <div className="relative h-56 rounded-xl overflow-hidden shadow-md">
+                <Image
+                  src="/images/compare-au.png"
+                  alt="חיים באוסטרליה"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-5">
+                  <span className="text-white font-bold text-lg">🇦🇺 החיים באוסטרליה</span>
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection delay={400}>
             <div className="text-center mt-10">
               <a
                 href="/compare"
