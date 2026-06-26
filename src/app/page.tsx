@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   GraduationCap,
   Briefcase,
@@ -24,10 +25,14 @@ export default function HomePage() {
     <>
       {/* ===== HERO ===== */}
       <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-primary-dark via-primary to-primary-light overflow-hidden">
-        {/* Background image placeholder */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        {/* Background image */}
+        <Image
+          src="/images/hero-bg.png"
+          alt="משפחה בקמפוס אוניברסיטאי בניו זילנד"
+          fill
+          className="object-cover opacity-25"
+          priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary/60 to-primary/50" />
 
