@@ -15,6 +15,9 @@ import {
   BookOpen,
   Award,
   Phone,
+  Clock,
+  MapPin,
+  Sparkles,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CountUp from "@/components/CountUp";
@@ -25,10 +28,9 @@ export default function HomePage() {
     <>
       {/* ===== HERO ===== */}
       <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-primary-dark via-primary to-primary-light overflow-hidden">
-        {/* Background image */}
         <Image
           src="/images/hero-bg.png"
-          alt="משפחה בקמפוס אוניברסיטאי בניו זילנד"
+          alt="קמפוס אוניברסיטאי בניו זילנד"
           fill
           className="object-cover opacity-25"
           priority
@@ -37,15 +39,19 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary/60 to-primary/50" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center text-white py-20">
+          <p className="text-accent font-semibold text-sm sm:text-base mb-4 tracking-wide">
+            המסלול שישראלים לא מספרים עליו
+          </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            לימודים שהופכים
+            תואר שני שנגמר
             <br />
-            <span className="text-accent">לחיים חדשים</span>
+            <span className="text-accent">בדרכון חדש</span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            תואר שני → ויזת עבודה → תושבות קבועה → אזרחות
-            <br />
-            המסלול המלא לניו זילנד ואוסטרליה — לך ולמשפחה
+          <p className="text-lg sm:text-xl md:text-2xl text-white/85 mb-4 max-w-3xl mx-auto leading-relaxed">
+            18 חודשי לימודים → 3 שנות עבודה → תושבות קבועה → אזרחות.
+          </p>
+          <p className="text-base sm:text-lg text-white/65 mb-8 max-w-2xl mx-auto">
+            לא רק אתה — גם בן/בת הזוג עובד/ת, הילדים לומדים חינם, וכל המשפחה על המסלול.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -54,13 +60,13 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 text-lg cursor-pointer"
             >
               <Phone className="w-5 h-5" />
-              בדוק התאמה בחינם
+              שיחת התאמה חינם — 15 דקות
             </a>
             <a
               href="#path"
               className="inline-flex items-center gap-2 border-2 border-white/50 hover:border-white text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer"
             >
-              למד עוד
+              איך זה עובד?
               <ArrowLeft className="w-4 h-4" />
             </a>
           </div>
@@ -68,10 +74,10 @@ export default function HomePage() {
           {/* Trust badges */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
             {[
-              { icon: Users, text: "בן/בת זוג עובד/ת" },
-              { icon: GraduationCap, text: "ילדים לומדים חינם" },
-              { icon: Briefcase, text: "3 שנות ויזת עבודה" },
-              { icon: Shield, text: "מסלול לאזרחות" },
+              { icon: Users, text: "בן/בת זוג עובד/ת מיום 1" },
+              { icon: GraduationCap, text: "ילדים לומדים בחינם" },
+              { icon: Briefcase, text: "עד 3 שנות ויזת עבודה" },
+              { icon: Shield, text: "מסלול ברור לאזרחות" },
             ].map((badge, i) => (
               <div
                 key={i}
@@ -85,16 +91,53 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== THE PATH ===== */}
-      <section id="path" className="py-20 lg:py-28 bg-surface">
+      {/* ===== PROBLEM — AGITATE ===== */}
+      <section className="py-16 lg:py-20 bg-surface">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                נמאס לכם לשמוע &quot;קנדה נסגרת&quot;?
+              </h2>
+              <p className="text-muted text-lg max-w-2xl mx-auto leading-relaxed">
+                ויזות עבודה שנדחות, מכסות שנגמרות, תורים של שנתיים.
+                בינתיים אוסטרליה וניו זילנד <strong className="text-primary">מחפשות בדיוק את האנשים שלכם</strong> —
+                מהנדסים, מפתחים, אנשי עסקים, ואנשי חינוך.
+              </p>
+            </div>
+          </AnimatedSection>
+          <AnimatedSection delay={200}>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+              {[
+                { emoji: "🇨🇦", text: "קנדה: 18+ חודשי המתנה לויזה", sub: "מכסות מלאות, חוסר ודאות" },
+                { emoji: "🇳🇿", text: "ניו זילנד: 4-8 שבועות לויזה", sub: "Green List — PR מהיר למקצועות מבוקשים" },
+                { emoji: "🇦🇺", text: "אוסטרליה: ביקוש למהגרים מיומנים", sub: "שכר ממוצע AUD 95K+" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className={`rounded-xl p-5 ${i === 0 ? "bg-red-50 border border-red-200" : "bg-green-50 border border-green-200"}`}
+                >
+                  <span className="text-3xl block mb-2">{item.emoji}</span>
+                  <p className="font-semibold text-foreground text-sm mb-1">{item.text}</p>
+                  <p className="text-muted text-xs">{item.sub}</p>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ===== THE PATH (Solution) ===== */}
+      <section id="path" className="py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
+              <p className="text-primary font-semibold text-sm mb-2">הפתרון</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                המסלול שלך — <span className="text-primary">4 צעדים לחיים חדשים</span>
+                4 צעדים מהרשמה <span className="text-primary">עד דרכון חדש</span>
               </h2>
               <p className="text-lg text-muted max-w-2xl mx-auto">
-                מסלול מוכח שאלפי ישראלים כבר עברו בהצלחה
+                מסלול ברור, מוכח, ועם ליווי צמוד בכל שלב
               </p>
             </div>
           </AnimatedSection>
@@ -105,8 +148,8 @@ export default function HomePage() {
                 step: 1,
                 icon: BookOpen,
                 title: "לימודים",
-                subtitle: "1-2 שנים",
-                desc: "תואר שני באוניברסיטה מובילה בניו זילנד או אוסטרליה. ויזת סטודנט לך ולמשפחה.",
+                subtitle: "12-18 חודשים",
+                desc: "תואר שני באוניברסיטה מדורגת. ויזת סטודנט עם היתר עבודה — גם לבן/בת הזוג.",
                 color: "text-primary",
                 bg: "bg-primary/5",
               },
@@ -114,8 +157,8 @@ export default function HomePage() {
                 step: 2,
                 icon: Briefcase,
                 title: "ויזת עבודה",
-                subtitle: "3 שנים",
-                desc: "Post-Study Work Visa — עבודה בכל תחום. בן/בת הזוג ממשיך/ה לעבוד.",
+                subtitle: "עד 3 שנים",
+                desc: "Post-Study Work Visa לכל תחום. שוק עבודה רעב למקצוענים עם תואר מקומי.",
                 color: "text-secondary",
                 bg: "bg-secondary/5",
               },
@@ -124,7 +167,7 @@ export default function HomePage() {
                 icon: Home,
                 title: "תושבות קבועה",
                 subtitle: "PR",
-                desc: "Skilled Migrant Category — תושבות קבועה לכל המשפחה לפי מערכת ניקוד.",
+                desc: "מערכת ניקוד שקופה. מי שבתחום מבוקש — מקבל PR תוך חודשים ספורים.",
                 color: "text-primary-light",
                 bg: "bg-primary-light/5",
               },
@@ -132,8 +175,8 @@ export default function HomePage() {
                 step: 4,
                 icon: Award,
                 title: "אזרחות",
-                subtitle: "5 שנים",
-                desc: "אזרחות מלאה לכל בני המשפחה. דרכון ניו זילנדי / אוסטרלי.",
+                subtitle: "5 שנים מההגעה",
+                desc: "דרכון ניו זילנדי או אוסטרלי. ביטוח חיים לכל המשפחה — לדורות.",
                 color: "text-accent",
                 bg: "bg-accent/5",
               },
@@ -175,9 +218,14 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-primary-dark/50 flex items-center justify-center">
           <AnimatedSection>
-            <p className="text-white text-2xl md:text-3xl font-bold text-center px-4">
-              הצטרפו לאלפי ישראלים שכבר עשו את הצעד
-            </p>
+            <div className="text-center px-4">
+              <p className="text-white text-2xl md:text-3xl font-bold mb-2">
+                כבר 100+ משפחות במסלול
+              </p>
+              <p className="text-white/70 text-base md:text-lg">
+                הם לא חיכו. הם התחילו.
+              </p>
+            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -187,11 +235,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
+              <p className="text-primary font-semibold text-sm mb-2">למה דווקא שם?</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                למה ישראלים בוחרים בניו זילנד ובאוסטרליה?
+                6 סיבות שישראלים עוברים לאוקיינוס השקט
               </h2>
               <p className="text-lg text-muted max-w-2xl mx-auto">
-                היתרונות שהופכים את המסלול הזה לבחירה הטובה ביותר
+                לא סתם עוד יעד — אלטרנטיבה אמיתית לחיים אחרים
               </p>
             </div>
           </AnimatedSection>
@@ -208,7 +257,7 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                  <span className="text-white font-bold text-sm">🎓 אקדמיה ברמה עולמית</span>
+                  <span className="text-white font-bold text-sm">🎓 תואר שנפתח דלתות</span>
                 </div>
               </div>
               <div className="relative h-48 rounded-xl overflow-hidden">
@@ -220,7 +269,7 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                  <span className="text-white font-bold text-sm">💼 שוק עבודה חזק</span>
+                  <span className="text-white font-bold text-sm">💼 קריירה בלי תקרת זכוכית</span>
                 </div>
               </div>
               <div className="relative h-48 rounded-xl overflow-hidden">
@@ -232,7 +281,7 @@ export default function HomePage() {
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                  <span className="text-white font-bold text-sm">🏡 כל המשפחה כלולה</span>
+                  <span className="text-white font-bold text-sm">🏡 בית שאפשר להרשות</span>
                 </div>
               </div>
             </div>
@@ -242,33 +291,33 @@ export default function HomePage() {
             {[
               {
                 icon: Leaf,
-                title: "איכות חיים יוצאת דופן",
-                desc: "ניו זילנד ואוסטרליה בטופ העולמי באיכות חיים, בטיחות, חינוך ובריאות.",
+                title: "איכות חיים שמרגישים ביום הראשון",
+                desc: "אוויר נקי, טבע ב-10 דקות מהבית, בתי ספר מצוינים. אוסטרליה וניו זילנד בחמישייה העולמית.",
               },
               {
                 icon: Users,
-                title: "כל המשפחה כלולה",
-                desc: "בן/בת הזוג מקבל/ת ויזת עבודה פתוחה מיום ראשון. הילדים לומדים בבי\"ס ציבורי.",
+                title: "המשפחה לא מחכה בבית",
+                desc: "בן/בת הזוג מקבל/ת ויזת עבודה פתוחה. הילדים לומדים בחינוך ציבורי. כולם מתחילים יחד.",
               },
               {
                 icon: DollarSign,
-                title: "כלכלה חזקה ושכר גבוה",
-                desc: "שוק עבודה יציב, ביקוש גבוה למקצועות טכנולוגיים. שכר ממוצע NZD 75K+.",
+                title: "שכר שמאפשר לחסוך",
+                desc: "שכר ממוצע NZD 75K+ בניו זילנד, AUD 95K+ באוסטרליה. יחס הכנסה-הוצאות טוב משמעותית מישראל.",
               },
               {
                 icon: Shield,
-                title: "ביטחון ויציבות",
-                desc: "מהמדינות הבטוחות בעולם. דמוקרטיה יציבה, חברה פתוחה ומכבדת.",
+                title: "ביטחון בלי מילואים",
+                desc: "מהמדינות הבטוחות בעולם. ללכת ברחוב בלילה, לשלוח ילדים לבד לבית ספר. רגיל שם.",
               },
               {
                 icon: GraduationCap,
-                title: "אקדמיה ברמה עולמית",
-                desc: "8 אוניברסיטאות בניו זילנד, כולן בדירוג עולמי. Group of Eight באוסטרליה.",
+                title: "תואר שמוכר בכל העולם",
+                desc: "8 אוניברסיטאות בניו זילנד, Group of Eight באוסטרליה. דירוגים עולמיים, מחקר מתקדם.",
               },
               {
                 icon: Globe2,
-                title: "פחות תחרות מקנדה",
-                desc: "מסלול ההגירה ברור ונגיש יותר. פחות עומס על מערכת הויזות לעומת קנדה.",
+                title: "פחות תחרות, יותר סיכוי",
+                desc: "בזמן שכולם נלחמים על ויזות בקנדה — כאן המסלול פתוח, ברור, ועם ביקוש אמיתי לאנשים שלכם.",
               },
             ].map((item, i) => (
               <AnimatedSection key={i} delay={i * 100}>
@@ -294,8 +343,8 @@ export default function HomePage() {
             {[
               { end: 3, suffix: " שנים", label: "ויזת עבודה אחרי התואר" },
               { end: 8, suffix: "", label: "אוניברסיטאות בניו זילנד" },
-              { end: 95, suffix: "%", label: "שיעור הצלחה במסלול" },
-              { end: 100, suffix: "+", label: "משפחות שליווינו", prefix: "" },
+              { end: 95, suffix: "%", label: "מהמשפחות שליווינו — נשארו" },
+              { end: 100, suffix: "+", label: "משפחות במסלול", prefix: "" },
             ].map((stat, i) => (
               <AnimatedSection key={i} delay={i * 150}>
                 <div>
@@ -319,11 +368,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
+              <p className="text-primary font-semibold text-sm mb-2">שני מסלולים מנצחים</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                ניו זילנד או אוסטרליה?
+                ניו זילנד או אוסטרליה — <span className="text-primary">מה מתאים לך?</span>
               </h2>
               <p className="text-lg text-muted max-w-2xl mx-auto">
-                שתי מדינות מדהימות, מסלולים שונים. נעזור לך לבחור
+                שתי מדינות מעולות, מסלולים שונים. 15 דקות שיחה וניעזור לך לבחור
               </p>
             </div>
           </AnimatedSection>
@@ -346,28 +396,29 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 </div>
                 <div className="p-8 pt-4">
-                <div className="text-4xl mb-4">🇳🇿</div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  ניו זילנד
-                </h3>
-                <ul className="space-y-3 mb-6">
-                  {[
-                    "3 שנות ויזת עבודה",
-                    "Green List — PR מהיר",
-                    "תחרות נמוכה",
-                    "שקט, טבע, איכות חיים",
-                    "בן/בת זוג עובד/ת מיום 1",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-foreground/80">
-                      <CheckCircle2 className="w-5 h-5 text-nz flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <span className="text-nz font-semibold text-sm inline-flex items-center gap-1">
-                  למד עוד
-                  <ArrowLeft className="w-4 h-4" />
-                </span>
+                  <div className="text-4xl mb-4">🇳🇿</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    ניו זילנד
+                  </h3>
+                  <p className="text-muted text-sm mb-4">האופציה השקטה והחכמה</p>
+                  <ul className="space-y-3 mb-6">
+                    {[
+                      "3 שנות ויזת עבודה — הכי ארוכה",
+                      "Green List — PR מהיר למקצועות טק",
+                      "תחרות נמוכה על ויזות",
+                      "עלויות לימוד נמוכות יותר",
+                      "בן/בת זוג עובד/ת מיום 1",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-foreground/80">
+                        <CheckCircle2 className="w-5 h-5 text-nz flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="text-nz font-semibold text-sm inline-flex items-center gap-1">
+                    המסלול המלא לניו זילנד
+                    <ArrowLeft className="w-4 h-4" />
+                  </span>
                 </div>
               </a>
             </AnimatedSection>
@@ -389,28 +440,29 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                 </div>
                 <div className="p-8 pt-4">
-                <div className="text-4xl mb-4">🇦🇺</div>
-                <h3 className="text-2xl font-bold text-foreground mb-4">
-                  אוסטרליה
-                </h3>
-                <ul className="space-y-3 mb-6">
-                  {[
-                    "2-4 שנות ויזת עבודה",
-                    "בונוס STEM + אזורי",
-                    "שכר גבוה מאוד",
-                    "קהילה ישראלית גדולה",
-                    "כלכלה דינמית ומגוונת",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2 text-sm text-foreground/80">
-                      <CheckCircle2 className="w-5 h-5 text-au flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <span className="text-au font-semibold text-sm inline-flex items-center gap-1">
-                  למד עוד
-                  <ArrowLeft className="w-4 h-4" />
-                </span>
+                  <div className="text-4xl mb-4">🇦🇺</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    אוסטרליה
+                  </h3>
+                  <p className="text-muted text-sm mb-4">הכוח הכלכלי של האזור</p>
+                  <ul className="space-y-3 mb-6">
+                    {[
+                      "שכר ממוצע AUD 95K+ — מהגבוהים בעולם",
+                      "בונוס נקודות STEM ואזורי",
+                      "קהילה ישראלית גדולה ופעילה",
+                      "Group of Eight — אוניברסיטאות טופ",
+                      "שער לכלכלת אסיה-פסיפיק",
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-foreground/80">
+                        <CheckCircle2 className="w-5 h-5 text-au flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="text-au font-semibold text-sm inline-flex items-center gap-1">
+                    המסלול המלא לאוסטרליה
+                    <ArrowLeft className="w-4 h-4" />
+                  </span>
                 </div>
               </a>
             </AnimatedSection>
@@ -452,7 +504,7 @@ export default function HomePage() {
                 href="/compare"
                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
               >
-                השוואה מלאה
+                השוואה מלאה — ניו זילנד vs אוסטרליה
                 <ArrowLeft className="w-4 h-4" />
               </a>
             </div>
@@ -465,17 +517,17 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
+              <p className="text-primary font-semibold text-sm mb-2">פשוט להתחיל</p>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                איך זה עובד?
+                5 צעדים מהשיחה הראשונה עד הנחיתה
               </h2>
               <p className="text-lg text-muted max-w-2xl mx-auto">
-                5 צעדים פשוטים מהשיחה הראשונה ועד הנחיתה
+                אנחנו מטפלים בכל הבירוקרטיה. אתם מתמקדים בחיים החדשים
               </p>
             </div>
           </AnimatedSection>
 
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute right-6 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
 
             <div className="space-y-8">
@@ -483,32 +535,32 @@ export default function HomePage() {
                 {
                   step: 1,
                   icon: Phone,
-                  title: "שיחת ייעוץ חינם",
-                  desc: "מיפוי הרקע שלך, תקציב, יעדים ומטרות. יחד נבין מה המסלול הנכון.",
+                  title: "שיחת התאמה חינם",
+                  desc: "15 דקות. מיפוי הרקע שלך, תקציב, יעדים. נגיד לך בכנות אם המסלול מתאים.",
                 },
                 {
                   step: 2,
-                  icon: Globe2,
-                  title: "בחירת מסלול",
-                  desc: "בחירת מדינה, אוניברסיטה ותואר שמתאימים בדיוק לך ולמשפחה.",
+                  icon: MapPin,
+                  title: "בוחרים מסלול",
+                  desc: "מדינה, אוניברסיטה, ותואר שמותאמים בדיוק לפרופיל שלך ולתוכנית ההגירה.",
                 },
                 {
                   step: 3,
                   icon: BookOpen,
-                  title: "הרשמה + ויזה",
-                  desc: "הגשת מועמדות, הכנת מסמכים, הגשת ויזת סטודנט — אנחנו מלווים כל שלב.",
+                  title: "מגישים ומתקבלים",
+                  desc: "אנחנו מכינים את כל המסמכים, מגישים מועמדות, ומלווים את הגשת הויזה.",
                 },
                 {
                   step: 4,
                   icon: Home,
-                  title: "הכנה ונסיעה",
-                  desc: "דיור, ביטוח, תכנון כלכלי, הכנה לחיים החדשים.",
+                  title: "ארוזים וטסים",
+                  desc: "דיור, ביטוח, חשבון בנק, תכנון כלכלי — הכל מסודר לפני שעולים על המטוס.",
                 },
                 {
                   step: 5,
                   icon: Heart,
-                  title: "ליווי שוטף",
-                  desc: "תמיכה מלאה גם אחרי שמגיעים — עד התושבות הקבועה.",
+                  title: "ליווי עד התושבות",
+                  desc: "לא נעלמים אחרי הנחיתה. ליווי שוטף עד שמקבלים PR — ואחריו.",
                 },
               ].map((item, i) => (
                 <AnimatedSection key={i} delay={i * 100}>
@@ -535,7 +587,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== CONTACT / LEAD FORM ===== */}
+      {/* ===== FINAL CTA ===== */}
       <section
         id="contact"
         className="py-20 lg:py-28 bg-gradient-to-l from-primary-dark to-primary"
@@ -544,10 +596,10 @@ export default function HomePage() {
           <AnimatedSection>
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                מתחילים?
+                15 דקות שיכולות לשנות הכל
               </h2>
               <p className="text-lg text-white/70">
-                השאירו פרטים ונחזור אליכם תוך 24 שעות
+                שיחת התאמה חינם. בלי התחייבות, בלי לחץ — רק תשובות
               </p>
             </div>
           </AnimatedSection>
