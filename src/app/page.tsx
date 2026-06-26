@@ -1,4 +1,52 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Script from "next/script";
+
+export const metadata: Metadata = {
+  title: "Relocation IL — לימודים והגירה לניו זילנד ואוסטרליה | תואר שני שנגמר בדרכון חדש",
+  description:
+    "מסלול מוכח מלימודים לאזרחות. תואר שני באוניברסיטה מובילה בניו זילנד או אוסטרליה, ויזת עבודה, תושבות קבועה ואזרחות. ליווי מלא לישראלים ומשפחות.",
+  keywords: [
+    "הגירה לניו זילנד",
+    "לימודים בניו זילנד",
+    "הגירה לאוסטרליה",
+    "לימודים באוסטרליה",
+    "תואר שני בחו\"ל",
+    "ויזת עבודה ניו זילנד",
+    "ויזת עבודה אוסטרליה",
+    "אזרחות דרך לימודים",
+    "רילוקיישן מישראל",
+    "ייעוץ הגירה לישראלים",
+  ],
+  alternates: {
+    canonical: "https://relocationil.com",
+  },
+  openGraph: {
+    title: "Relocation IL — תואר שני שנגמר בדרכון חדש",
+    description:
+      "מסלול מוכח מלימודים לאזרחות בניו זילנד ואוסטרליה. ליווי מלא לישראלים.",
+    url: "https://relocationil.com",
+    images: ["/images/og-image.png"],
+  },
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "ייעוץ הגירה ולימודים — ניו זילנד ואוסטרליה",
+  description:
+    "ליווי מקצועי לישראלים בתהליך הגירה לניו זילנד ואוסטרליה דרך מסלול לימודים אקדמיים. מהייעוץ הראשוני ועד תושבות קבועה.",
+  provider: {
+    "@type": "Organization",
+    name: "Relocation IL",
+    url: "https://relocationil.com",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "Israel",
+  },
+  serviceType: "Immigration Consulting",
+};
 import {
   GraduationCap,
   Briefcase,
@@ -27,6 +75,11 @@ import ContactForm from "@/components/ContactForm";
 export default function HomePage() {
   return (
     <>
+      <Script
+        id="home-service-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-primary-dark via-primary to-primary-light overflow-hidden">
         <Image

@@ -1,5 +1,54 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Script from "next/script";
 import FlagIcon from "@/components/FlagIcon";
+
+export const metadata: Metadata = {
+  title: "הגירה לניו זילנד דרך לימודים — תואר שני, ויזת עבודה ותושבות קבועה",
+  description:
+    "מדריך מלא להגירה לניו זילנד: אוניברסיטאות מובילות, תוכניות תואר שני, Green List, ויזת עבודה ל-3 שנים, ותושבות קבועה. ליווי מקצועי לישראלים.",
+  keywords: [
+    "הגירה לניו זילנד",
+    "לימודים בניו זילנד",
+    "תואר שני בניו זילנד",
+    "ויזת עבודה ניו זילנד",
+    "תושבות קבועה ניו זילנד",
+    "Green List ניו זילנד",
+    "אוניברסיטאות בניו זילנד",
+    "דוקטורט בניו זילנד",
+    "relocation to new zealand",
+    "study in new zealand",
+    "work visa new zealand",
+  ],
+  alternates: {
+    canonical: "https://relocationil.com/new-zealand",
+  },
+  openGraph: {
+    title: "הגירה לניו זילנד — לימודים, עבודה ותושבות | Relocation IL",
+    description:
+      "מסלול מוכח מלימודים לאזרחות בניו זילנד. אוניברסיטאות טופ, ויזת עבודה ל-3 שנים, Green List.",
+    url: "https://relocationil.com/new-zealand",
+    images: ["/images/nz-hero.png"],
+  },
+};
+
+const nzServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "ייעוץ הגירה לניו זילנד דרך לימודים",
+  description:
+    "ליווי מקצועי לישראלים בתהליך הגירה לניו זילנד: בחירת אוניברסיטה, תואר שני, ויזת סטודנט, ויזת עבודה ותושבות קבועה.",
+  provider: {
+    "@type": "Organization",
+    name: "Relocation IL",
+    url: "https://relocationil.com",
+  },
+  areaServed: [
+    { "@type": "Country", name: "Israel" },
+    { "@type": "Country", name: "New Zealand" },
+  ],
+  serviceType: "Immigration Consulting",
+};
 import {
   GraduationCap,
   Briefcase,
@@ -31,6 +80,11 @@ import AnimatedSection from "@/components/AnimatedSection";
 export default function NewZealandPage() {
   return (
     <>
+      <Script
+        id="nz-service-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(nzServiceJsonLd) }}
+      />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-to-b from-[#0d5c2e] via-nz to-[#22c55e] overflow-hidden">
         <Image

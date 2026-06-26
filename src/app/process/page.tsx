@@ -1,4 +1,30 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "תהליך ההגירה — צעד אחר צעד לחיים חדשים",
+  description:
+    "איך עובד תהליך ההגירה לניו זילנד או אוסטרליה? 6 שלבים פשוטים: ייעוץ, בחירת מסלול, הרשמה, ויזה, לימודים וליווי לאחר ההגעה.",
+  keywords: [
+    "תהליך הגירה",
+    "שלבי הגירה לניו זילנד",
+    "שלבי הגירה לאוסטרליה",
+    "ויזת סטודנט",
+    "הרשמה לאוניברסיטה",
+    "ייעוץ הגירה",
+    "ליווי הגירה לישראלים",
+  ],
+  alternates: {
+    canonical: "https://relocationil.com/process",
+  },
+  openGraph: {
+    title: "תהליך ההגירה — צעד אחר צעד | Relocation IL",
+    description:
+      "6 שלבים פשוטים לחיים חדשים בניו זילנד או אוסטרליה.",
+    url: "https://relocationil.com/process",
+    images: ["/images/og-image.png"],
+  },
+};
 import {
   Phone,
   ArrowLeft,

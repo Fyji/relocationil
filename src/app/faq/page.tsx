@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Script from "next/script";
 import {
   HelpCircle,
   ChevronDown,
@@ -12,6 +14,23 @@ import {
   MessageCircle,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "שאלות נפוצות — הגירה ולימודים בניו זילנד ואוסטרליה",
+  description:
+    "תשובות ל-23 שאלות נפוצות על הגירה דרך לימודים: עלויות, ויזה, משפחה, תעסוקה, אזרחות ועוד. כל מה שצריך לדעת לפני שמתחילים.",
+  keywords: [
+    "שאלות נפוצות הגירה",
+    "עלות לימודים ניו זילנד",
+    "ויזת עבודה אחרי לימודים",
+    "הגירה עם משפחה",
+    "אזרחות ניו זילנד כמה זמן",
+    "עלות מחיה אוסטרליה",
+  ],
+  alternates: {
+    canonical: "https://relocationil.com/faq",
+  },
+};
 
 const faqCategories = [
   {

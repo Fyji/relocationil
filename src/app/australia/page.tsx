@@ -1,5 +1,54 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Script from "next/script";
 import FlagIcon from "@/components/FlagIcon";
+
+export const metadata: Metadata = {
+  title: "הגירה לאוסטרליה דרך לימודים — תואר שני, ויזת עבודה ותושבות קבועה",
+  description:
+    "מדריך מלא להגירה לאוסטרליה: אוניברסיטאות Group of Eight, תוכניות תואר שני, ויזת עבודה ל-4 שנים, מערכת ניקוד, ותושבות קבועה. ליווי מקצועי לישראלים.",
+  keywords: [
+    "הגירה לאוסטרליה",
+    "לימודים באוסטרליה",
+    "תואר שני באוסטרליה",
+    "ויזת עבודה אוסטרליה",
+    "תושבות קבועה אוסטרליה",
+    "Group of Eight אוסטרליה",
+    "אוניברסיטאות באוסטרליה",
+    "דוקטורט באוסטרליה",
+    "study in australia",
+    "work visa australia",
+    "israel to australia immigration",
+  ],
+  alternates: {
+    canonical: "https://relocationil.com/australia",
+  },
+  openGraph: {
+    title: "הגירה לאוסטרליה — לימודים, עבודה ותושבות | Relocation IL",
+    description:
+      "מסלול מוכח מלימודים לאזרחות באוסטרליה. Group of Eight, מערכת ניקוד, ויזת עבודה.",
+    url: "https://relocationil.com/australia",
+    images: ["/images/au-hero.png"],
+  },
+};
+
+const auServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "ייעוץ הגירה לאוסטרליה דרך לימודים",
+  description:
+    "ליווי מקצועי לישראלים בתהליך הגירה לאוסטרליה: בחירת אוניברסיטה, תואר שני, ויזת סטודנט, ויזת עבודה ותושבות קבועה.",
+  provider: {
+    "@type": "Organization",
+    name: "Relocation IL",
+    url: "https://relocationil.com",
+  },
+  areaServed: [
+    { "@type": "Country", name: "Israel" },
+    { "@type": "Country", name: "Australia" },
+  ],
+  serviceType: "Immigration Consulting",
+};
 import {
   GraduationCap,
   Briefcase,
@@ -33,6 +82,11 @@ import AnimatedSection from "@/components/AnimatedSection";
 export default function AustraliaPage() {
   return (
     <>
+      <Script
+        id="au-service-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(auServiceJsonLd) }}
+      />
       {/* ===== HERO ===== */}
       <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-to-b from-yellow-900 via-yellow-800 to-yellow-700 overflow-hidden">
         <Image

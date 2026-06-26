@@ -1,5 +1,31 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import FlagIcon from "@/components/FlagIcon";
+
+export const metadata: Metadata = {
+  title: "ניו זילנד מול אוסטרליה — השוואה מקיפה למהגרים",
+  description:
+    "השוואה מקיפה בין ניו זילנד לאוסטרליה: עלות לימודים, ויזת עבודה, שכר, אקלים, מסלול לתושבות קבועה ואיכות חיים. גלו איזה יעד מתאים לכם.",
+  keywords: [
+    "ניו זילנד מול אוסטרליה",
+    "השוואה בין ניו זילנד לאוסטרליה",
+    "איפה להגר",
+    "הגירה לניו זילנד",
+    "הגירה לאוסטרליה",
+    "לימודים בחו\"ל",
+    "new zealand vs australia",
+  ],
+  alternates: {
+    canonical: "https://relocationil.com/compare",
+  },
+  openGraph: {
+    title: "ניו זילנד מול אוסטרליה — השוואה מקיפה | Relocation IL",
+    description:
+      "איזה מדינה מתאימה לכם? השוואה מקיפה בין ניו זילנד לאוסטרליה.",
+    url: "https://relocationil.com/compare",
+    images: ["/images/og-image.png"],
+  },
+};
 import {
   Globe2,
   DollarSign,
