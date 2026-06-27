@@ -108,7 +108,7 @@ const organizationJsonLd = {
     "ייעוץ מקצועי לישראלים בתהליך הגירה לניו זילנד ואוסטרליה דרך מסלול לימודים אקדמיים.",
   contactPoint: {
     "@type": "ContactPoint",
-    email: "info@relocationil.com",
+    email: "relocationil.info@gmail.com",
     contactType: "customer service",
     areaServed: "IL",
     availableLanguage: ["Hebrew", "English"],

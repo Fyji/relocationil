@@ -64,7 +64,7 @@ import {
   ArrowLeft,
   BookOpen,
   Award,
-  Phone,
+  Mail,
   Star,
   FlaskConical,
   Code,
@@ -117,7 +117,7 @@ export default function AustraliaPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 text-lg cursor-pointer"
             >
-              <Phone className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
               בדוק התאמה בחינם
             </a>
             <a
@@ -830,11 +830,11 @@ export default function AustraliaPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-yellow-800 font-bold px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 text-lg cursor-pointer"
             >
-              <Phone className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
               בדוק התאמה בחינם
             </a>
             <p className="text-white/60 text-sm mt-4">
-              📧 info@relocationil.com | 📞 050-XXX-XXXX
+              📧 <a href="mailto:relocationil.info@gmail.com" className="hover:text-white/80">relocationil.info@gmail.com</a>
             </p>
           </AnimatedSection>
         </div>

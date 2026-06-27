@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Mail } from "lucide-react";
 
 const navLinks = [
   { href: "/new-zealand", label: "ניו זילנד" },
@@ -52,7 +52,7 @@ export default function Header() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-semibold px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
             >
-              <Phone className="w-4 h-4" />
+              <Mail className="w-4 h-4" />
               ייעוץ חינם
             </a>
           </div>
@@ -86,7 +86,7 @@ export default function Header() {
               href="/contact"
               className="mt-2 inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold px-6 py-3 rounded-full cursor-pointer"
             >
-              <Phone className="w-4 h-4" />
+              <Mail className="w-4 h-4" />
               ייעוץ חינם
             </a>
           </nav>

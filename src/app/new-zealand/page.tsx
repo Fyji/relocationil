@@ -63,7 +63,7 @@ import {
   ArrowLeft,
   BookOpen,
   Award,
-  Phone,
+  Mail,
   MapPin,
   Clock,
   Star,
@@ -115,7 +115,7 @@ export default function NewZealandPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 text-lg cursor-pointer"
             >
-              <Phone className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
               ייעוץ חינם — ניו זילנד
             </a>
             <a
@@ -776,11 +776,11 @@ export default function NewZealandPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 text-lg cursor-pointer"
             >
-              <Phone className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
               בדוק התאמה בחינם
             </a>
             <p className="mt-6 text-white/60 text-sm">
-              📧 info@relocationil.com &nbsp;|&nbsp; 📞 050-XXX-XXXX
+              📧 <a href="mailto:relocationil.info@gmail.com" className="hover:text-white/80">relocationil.info@gmail.com</a>
             </p>
           </AnimatedSection>
         </div>

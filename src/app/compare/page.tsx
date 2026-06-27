@@ -38,7 +38,7 @@ import {
   Users,
   ArrowLeft,
   CheckCircle2,
-  Phone,
+  Mail,
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -307,7 +307,7 @@ export default function ComparePage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors shadow-lg"
             >
-              <Phone className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
               לשיחת ייעוץ חינמית
               <ArrowLeft className="w-5 h-5" />
             </a>

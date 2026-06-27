@@ -1,10 +1,10 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Clock } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
   title: "צור קשר | Relocation IL — ייעוץ לימודים והגירה",
-  description: "השאירו פרטים לייעוץ חינם. נחזור אליכם תוך 24 שעות. טלפון, אימייל, וWhatsApp.",
+  description: "השאירו פרטים לייעוץ חינם. נחזור אליכם תוך 24 שעות.",
 };
 
 export default function ContactPage() {
@@ -36,22 +36,10 @@ export default function ContactPage() {
                   <div className="space-y-5">
                     {[
                       {
-                        icon: Phone,
-                        title: "טלפון",
-                        value: "050-XXX-XXXX",
-                        href: "tel:+972500000000",
-                      },
-                      {
                         icon: Mail,
                         title: "אימייל",
-                        value: "info@relocationil.com",
-                        href: "mailto:info@relocationil.com",
-                      },
-                      {
-                        icon: MessageCircle,
-                        title: "WhatsApp",
-                        value: "לחץ לשיחה",
-                        href: "https://wa.me/972500000000",
+                        value: "relocationil.info@gmail.com",
+                        href: "mailto:relocationil.info@gmail.com",
                       },
                       {
                         icon: MapPin,

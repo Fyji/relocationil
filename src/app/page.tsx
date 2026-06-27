@@ -62,7 +62,7 @@ import {
   ArrowLeft,
   BookOpen,
   Award,
-  Phone,
+  Mail,
   Clock,
   MapPin,
   Sparkles,
@@ -113,8 +113,8 @@ export default function HomePage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 text-lg cursor-pointer"
             >
-              <Phone className="w-5 h-5" />
-              שיחת התאמה חינם — 15 דקות
+              <Mail className="w-5 h-5" />
+              ייעוץ ראשוני חינם
             </a>
             <a
               href="#path"
@@ -588,9 +588,9 @@ export default function HomePage() {
               {[
                 {
                   step: 1,
-                  icon: Phone,
-                  title: "שיחת התאמה חינם",
-                  desc: "15 דקות. מיפוי הרקע שלך, תקציב, יעדים. נגיד לך בכנות אם המסלול מתאים.",
+                  icon: Mail,
+                  title: "פנייה ראשונית חינם",
+                  desc: "מילוי טופס קצר. מיפוי הרקע שלך, תקציב, יעדים. נגיד לך בכנות אם המסלול מתאים.",
                 },
                 {
                   step: 2,
@@ -663,8 +663,7 @@ export default function HomePage() {
           </AnimatedSection>
 
           <div className="mt-8 text-center text-white/60 text-sm space-y-1">
-            <p>📧 info@relocationil.com</p>
-            <p>📞 050-XXX-XXXX</p>
+            <p>📧 <a href="mailto:relocationil.info@gmail.com" className="hover:text-white/80">relocationil.info@gmail.com</a></p>
           </div>
         </div>
       </section>

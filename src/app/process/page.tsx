@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 };
 import {
-  Phone,
+  Mail,
   ArrowLeft,
   MessageCircle,
   Route,
@@ -293,7 +293,7 @@ export default function ProcessPage() {
               href="/contact"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-xl text-lg font-semibold transition-colors shadow-lg"
             >
-              <Phone className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
               קבעו שיחת ייעוץ חינמית
               <ArrowLeft className="w-5 h-5" />
             </a>

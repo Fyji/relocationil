@@ -34,7 +34,7 @@ export default function ContactForm() {
 
       setIsSubmitted(true);
     } catch {
-      setError("אירעה שגיאה. נסה שוב או צור קשר בטלפון.");
+      setError("אירעה שגיאה. נסה שוב או שלח מייל ל-relocationil.info@gmail.com");
     } finally {
       setIsSubmitting(false);
     }
