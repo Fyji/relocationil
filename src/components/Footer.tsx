@@ -20,7 +20,7 @@ export default function Footer() {
             </Link>
             <p className="text-sm leading-relaxed">
               ליווי מקצועי לישראלים במסלול לימודים והגירה לניו זילנד ואוסטרליה.
-              מתואר שני ועד אזרחות.
+              מלווים אותך עד קבלת Offer of Place — כרטיס הכניסה שלך.
             </p>
           </div>
 

@@ -102,7 +102,7 @@ export default function ContactPage() {
                       ✓ ייעוץ ראשוני חינם ללא התחייבות
                     </li>
                     <li className="flex items-center gap-2">
-                      ✓ ליווי מקצועי מהשלב הראשון ועד ה-PR
+                      ✓ ליווי מקצועי עד קבלת Offer of Place
                     </li>
                     <li className="flex items-center gap-2">
                       ✓ התמחות בישראלים — אנחנו מכירים את הצרכים שלך
