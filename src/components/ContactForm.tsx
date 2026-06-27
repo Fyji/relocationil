@@ -7,14 +7,37 @@ import { Send, Loader2, CheckCircle2 } from "lucide-react";
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      phone: formData.get("phone") as string,
+      email: formData.get("email") as string,
+      interest: formData.get("interest") as string,
+      notes: formData.get("notes") as string,
+    };
+
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error("שגיאה בשליחה");
+
+      setIsSubmitted(true);
+    } catch {
+      setError("אירעה שגיאה. נסה שוב או צור קשר בטלפון.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -135,6 +158,13 @@ export default function ContactForm() {
           className="w-full px-4 py-3 rounded-lg border border-border bg-white text-foreground placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all resize-none"
         />
       </div>
+
+      {/* Error */}
+      {error && (
+        <div className="bg-destructive/10 border border-destructive/20 text-destructive rounded-lg px-4 py-3 text-sm">
+          {error}
+        </div>
+      )}
 
       {/* Submit */}
       <button
