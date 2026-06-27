@@ -1,82 +1,59 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
+import pool from "@/lib/db";
 
-const DATA_FILE = path.join(process.cwd(), "data", "leads.json");
-
-interface Lead {
-  id: string;
-  name: string;
-  phone: string;
-  email: string;
-  interest: string;
-  notes: string;
-  createdAt: string;
-  status: "new" | "contacted" | "qualified" | "closed";
-  adminNotes: string;
-}
-
-async function getLeads(): Promise<Lead[]> {
-  try {
-    const data = await fs.readFile(DATA_FILE, "utf-8");
-    return JSON.parse(data);
-  } catch {
-    return [];
-  }
-}
-
-async function saveLeads(leads: Lead[]) {
-  await fs.writeFile(DATA_FILE, JSON.stringify(leads, null, 2));
-}
+type Ctx = { params: Promise<{ id: string }> };
 
 // PATCH — update lead status/notes (admin)
-export async function PATCH(
-  req: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function PATCH(req: NextRequest, ctx: Ctx) {
   const password = req.headers.get("x-admin-password");
   const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "relocation2024";
-
   if (password !== ADMIN_PASSWORD) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { id } = await params;
+  const { id } = await ctx.params;
   const body = await req.json();
-  const leads = await getLeads();
-  const index = leads.findIndex((l) => l.id === id);
+  const sets: string[] = [];
+  const vals: unknown[] = [];
+  let idx = 1;
 
-  if (index === -1) {
-    return NextResponse.json({ error: "Lead not found" }, { status: 404 });
+  if (body.status !== undefined) {
+    sets.push(`status = $${idx++}`);
+    vals.push(body.status);
+  }
+  if (body.adminNotes !== undefined) {
+    sets.push(`admin_notes = $${idx++}`);
+    vals.push(body.adminNotes);
   }
 
-  if (body.status) leads[index].status = body.status;
-  if (body.adminNotes !== undefined) leads[index].adminNotes = body.adminNotes;
+  if (sets.length === 0) {
+    return NextResponse.json({ error: "Nothing to update" }, { status: 400 });
+  }
 
-  await saveLeads(leads);
-  return NextResponse.json(leads[index]);
+  vals.push(id);
+  try {
+    await pool.query(`UPDATE leads SET ${sets.join(", ")} WHERE id = $${idx}`, vals);
+    return NextResponse.json({ success: true });
+  } catch (e) {
+    console.error("PATCH /api/leads/[id] error:", e);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }
 
-// DELETE — delete lead (admin)
-export async function DELETE(
-  req: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+// DELETE — remove lead (admin)
+export async function DELETE(req: NextRequest, ctx: Ctx) {
   const password = req.headers.get("x-admin-password");
   const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "relocation2024";
-
   if (password !== ADMIN_PASSWORD) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { id } = await params;
-  const leads = await getLeads();
-  const filtered = leads.filter((l) => l.id !== id);
-
-  if (filtered.length === leads.length) {
-    return NextResponse.json({ error: "Lead not found" }, { status: 404 });
+  const { id } = await ctx.params;
+  try {
+    await pool.query(`DELETE FROM leads WHERE id = $1`, [id]);
+    return NextResponse.json({ success: true });
+  } catch (e) {
+    console.error("DELETE /api/leads/[id] error:", e);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
-
-  await saveLeads(filtered);
-  return NextResponse.json({ success: true });
 }
